@@ -11,6 +11,12 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/berry','BerryController@getAllBerries');
+Route::post('/berryDetails','BerryController@getDetails')->name('berryDetails');
+Route::post('/berryPagination','BerryController@berryPagination')->name('berryPagination');
